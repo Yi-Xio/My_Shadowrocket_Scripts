@@ -1,0 +1,9 @@
+#!name=自建小红书配置
+#!desc=对墨鱼的小红书脚本进行覆盖修改
+#!墨鱼小红书脚本地址=https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/XiaoHongShu.conf
+
+[Script]
+# 增加 剔除首页信息流中的视频推荐
+my_redbook_json = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?, script-path=https://raw.githubusercontent.com/Yi-Xio/My_Shadowrocket_Scripts/master/scripts/redbook.min.js , requires-body=true, max-size=-1, timeout=60
+# 增加 剔除首页上类型栏中的‘视频’与‘直播’
+my_redbook_json = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories\?, script-path=https://raw.githubusercontent.com/Yi-Xio/My_Shadowrocket_Scripts/master/scripts/redbook.min.js , requires-body=true, max-size=-1, timeout=60
