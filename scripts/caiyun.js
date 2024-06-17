@@ -5,7 +5,7 @@
 
 let body = $response.body;
 if (body) {
-  switch (!0) {
+  switch (true) {
     case /v2\/user\?(.*&)?app_name=weather(&.*)?$/.test($request.url):
       try {
         let m = JSON.parse(body);
@@ -25,7 +25,7 @@ if (body) {
       }
       break;
     default:
-        $done({})
+      $done({})
   }
   $done({
       body
